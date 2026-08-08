@@ -36,36 +36,40 @@ An end-to-end data and AI platform project built with Python, covering data engi
 - Retrieval-based responses
 - FastAPI backend
 
-## Project Structure
+## Repository Structure
 
 ```text
 Zepto-Data-AI-Platform/
 │
 ├── analytics/
 │   ├── analytics_pipeline.ipynb
-│   ├── titanic.csv
-│   ├── titanic_cleaned.csv
-│   └── best_model.joblib
+│   ├── best_model.joblib
+│   └── README.md
 │
 ├── data_pipeline/
-│   ├── books.csv
-│   ├── books_cleaned.csv
-│   ├── books.db
+│   ├── scraper.py
 │   ├── database.py
 │   ├── queries.py
-│   └── ...
+│   └── README.md
 │
 ├── support_assistant/
-│   ├── docs/
-│   ├── chroma_db/
 │   ├── embed.py
 │   ├── graph.py
 │   ├── main.py
 │   ├── models.py
 │   ├── prompts.py
-│   ├── Dockerfile
-│   ├── README.md
-│   └── requirements.txt
+│   └── README.md
 │
-├── .gitignore
-└── README.md
+├── README.md
+└── .gitignore
+
+## Module Design Decisions
+
+### Data Pipeline
+The pipeline separates scraping, cleaning, database creation, and analytical queries. Scraped data is stored as CSV, cleaned with Pandas, and loaded into a normalized SQLite database containing separate books and categories tables.
+
+### Analytics
+The analytics pipeline uses preprocessing for numerical and categorical features and compares multiple machine-learning models. Random Forest is tuned using GridSearchCV and evaluated using test metrics and Out-of-Bag (OOB) scoring.
+
+### Support Assistant
+The support assistant uses semantic retrieval over Zepto policy documents. LangGraph manages intent classification and conditional routing, while Chroma stores document embeddings for similarity search. FastAPI exposes the assistant through a REST API.
