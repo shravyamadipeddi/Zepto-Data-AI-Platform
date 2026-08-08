@@ -126,3 +126,7 @@ Open Swagger UI in your browser:
 http://127.0.0.1:8000/docs
 
 Use the POST /ask endpoint to ask questions.
+
+## Notes
+
+The project is organized as three independent but related modules covering data engineering, machine learning analytics, and retrieval-augmented customer support.
