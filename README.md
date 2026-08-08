@@ -62,3 +62,14 @@ Zepto-Data-AI-Platform/
 │
 ├── README.md
 └── .gitignore
+
+## Module Design Decisions
+
+### Data Pipeline
+The pipeline separates scraping, cleaning, database creation, and analytical queries. Scraped data is stored as CSV, cleaned with Pandas, and loaded into a normalized SQLite database containing separate books and categories tables.
+
+### Analytics
+The analytics pipeline uses preprocessing for numerical and categorical features and compares multiple machine-learning models. Random Forest is tuned using GridSearchCV and evaluated using test metrics and Out-of-Bag (OOB) scoring.
+
+### Support Assistant
+The support assistant uses semantic retrieval over Zepto policy documents. LangGraph manages intent classification and conditional routing, while Chroma stores document embeddings for similarity search. FastAPI exposes the assistant through a REST API.
