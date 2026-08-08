@@ -94,7 +94,7 @@ The following classification models were trained:
 
 ## Handling Class Imbalance
 
-SMOTE (Synthetic Minority Over-sampling Technique) was applied to balance the training dataset before model training.
+SMOTE was explored on the training data to demonstrate class balancing. The final model comparison and hyperparameter tuning were performed using the preprocessing pipeline without SMOTE.
 
 ---
 

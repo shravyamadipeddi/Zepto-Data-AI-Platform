@@ -71,12 +71,14 @@ def retrieve_and_answer(state: GraphState):
         for doc in docs
     ]
 
-    top_chunk = docs[0].page_content[:200]
+    retrieved_context = "\n\n".join(
+        doc.page_content for doc in docs
+    )
 
     if MOCK_LLM == "1":
 
         state["answer"] = (
-            f"Based on the retrieved context: {top_chunk}"
+            f"Based on the retrieved context: \n\n{retrieved_context}"
         )
 
         state["confidence"] = 1.0

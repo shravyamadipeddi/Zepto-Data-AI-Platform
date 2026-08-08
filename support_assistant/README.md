@@ -107,6 +107,21 @@ Example Response
 }
 ```
 
+### Example 2 — General / Unrelated Question
+
+Request:
+
+```json
+{
+  "query": "What is the capital of France?"
+}
+
+{
+  "answer": "I can only answer questions about Zepto policies right now.",
+  "sources": [],
+  "confidence": 1.0
+}
+
 ---
 
 ## Technologies Used
@@ -122,6 +137,12 @@ Example Response
 ---
 
 ## Workflow
+
+### Mock LLM Mode
+
+The project defaults to `MOCK_LLM=1` so the assistant can run without an external LLM API key. In this mode, policy questions return deterministic answers based on retrieved Chroma context, while unrelated questions are handled by the direct-answer branch.
+
+The prompt template in `prompts.py` defines the intended grounding behavior for a real LLM integration.
 
 User Question
 
