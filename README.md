@@ -36,36 +36,29 @@ An end-to-end data and AI platform project built with Python, covering data engi
 - Retrieval-based responses
 - FastAPI backend
 
-## Project Structure
+## Repository Structure
 
 ```text
 Zepto-Data-AI-Platform/
 │
 ├── analytics/
 │   ├── analytics_pipeline.ipynb
-│   ├── titanic.csv
-│   ├── titanic_cleaned.csv
-│   └── best_model.joblib
+│   ├── best_model.joblib
+│   └── README.md
 │
 ├── data_pipeline/
-│   ├── books.csv
-│   ├── books_cleaned.csv
-│   ├── books.db
+│   ├── scraper.py
 │   ├── database.py
 │   ├── queries.py
-│   └── ...
+│   └── README.md
 │
 ├── support_assistant/
-│   ├── docs/
-│   ├── chroma_db/
 │   ├── embed.py
 │   ├── graph.py
 │   ├── main.py
 │   ├── models.py
 │   ├── prompts.py
-│   ├── Dockerfile
-│   ├── README.md
-│   └── requirements.txt
+│   └── README.md
 │
-├── .gitignore
-└── README.md
+├── README.md
+└── .gitignore
